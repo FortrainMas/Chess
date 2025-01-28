@@ -14,17 +14,17 @@ jobs:
 
      - name: Build and push frontend
        uses: docker/build-push-action@v4
-         with:
-           file: frontend/Dockerfile
-           push: true
-           tags: user/app:latest
+       with:
+         file: frontend/Dockerfile
+         push: true
+         tags: user/app:latest
 
       - name: Build and push backend
         uses: docker/build-and-push-action@v3
-          with:
-            file: backend/Dockerfile
-            push: true
-            tags: user/app:latest
+        with:
+          file: backend/Dockerfile
+          push: true
+          tags: user/app:latest
 
   deploy:
    runs-on: self-hosted
