@@ -21,13 +21,13 @@ jobs:
 
       - name: Build and push backend
         uses: docker/build-and-push-action@v3
-        with:
-          file: backend/Dockerfile
-          push: true
-          tags: user/app:latest
+          with:
+            file: backend/Dockerfile
+            push: true
+            tags: user/app:latest
 
   deploy:
-   runs-on: ubuntu-latest
+   runs-on: self-hosted
    needs: build
    steps:
      - name: SSH and Deploy
